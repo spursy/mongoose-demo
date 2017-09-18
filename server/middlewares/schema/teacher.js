@@ -15,15 +15,15 @@ teacherSchema.pre('save', function (next) {
 });
 
 teacherSchema.statics = {
-    async saveTeacher(data) {
-        teacher = new Teacher({
-            name: data.name,
-            classid: data.classid
-        })
+    // async saveTeacher(data) {
+    //     teacher = new Teacher({
+    //         name: data.name,
+    //         classid: data.classid
+    //     })
 
-        await teacher.save()
-        return data
-    }
+    //     await teacher.save()
+    //     return data
+    // }
 } 
 
 const Teacher = mongoose.model('Teacher', teacherSchema)

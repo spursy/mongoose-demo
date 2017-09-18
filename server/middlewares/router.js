@@ -1,8 +1,14 @@
 const router = require('koa-router')()
 
-router.get('/getname', async function(ctx, next) {
-    ctx.body = 'hello my word'
-    await next()
+router.get('/getname',  async (ctx, next) => {
+    let title = 'Mongoose demo page'
+    await ctx.render('index', {
+      title,
+    })
 })
 
-exports.router = router
+router.post('/getname',  async (ctx, next) => {
+    console.log(JSON.stringify(ctx.request.body));
+})
+
+module.exports = router

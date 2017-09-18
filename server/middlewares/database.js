@@ -4,9 +4,9 @@ const path = require('path');
 const fs = require('fs');
 
 const models = path.resolve(__dirname, './schema')
-fs.readdirSync(models)
-    .filter(file => ~file.search(/^[^\.].*js$/))
-    .forEach(file => require(path.resolve(models, file)))
+// fs.readdirSync(models)
+//     .filter(file => ~file.search(/^[^\.].*js$/))
+//     .forEach(file => require(path.resolve(models, file)))
 
 exports.connectDB = function () {
     mongoose.set('debug', true)
